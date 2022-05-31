@@ -1,0 +1,2 @@
+include LICENSE
+recursive-include compositional_attention *.py
