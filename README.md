@@ -10,6 +10,26 @@
 
 ![](media/architecture.PNG)
 
+## Installation
+
+Run the following to install:
+
+```sh
+pip install compositional-attention
+```
+
+## Developing `compositional-attention`
+
+To install `compositional-attention`, along with tools you need to develop and test, run the following in your virtualenv:
+
+```sh
+git clone https://github.com/Rishit-dagli/compositional-attention.git
+# or clone your own fork
+
+cd compositional-attention
+pip install -e .[dev]
+```
+
 ## Want to Contribute 🙋‍♂️?
 
 Awesome! If you want to contribute to this project, you're always welcome! See [Contributing Guidelines](CONTRIBUTING.md). You can also take a look at [open issues](https://github.com/Rishit-dagli/Compositional-Attention/issues) for getting more information about current or upcoming tasks.
