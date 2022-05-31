@@ -8,6 +8,8 @@
 [![GitHub followers](https://img.shields.io/github/followers/Rishit-dagli?label=Follow&style=social)](https://github.com/Rishit-dagli)
 [![Twitter Follow](https://img.shields.io/twitter/follow/rishit_dagli?style=social)](https://twitter.com/intent/follow?screen_name=rishit_dagli)
 
+This repository is an implementation of [Compositional Attention: Disentangling Search and Retrieval](https://arxiv.org/abs/2110.09419) by MILA. Revisiting standard Multi-head attention through the lens of multiple parallel and independent search and retrieval mechanisms, this leads to static pairings between searches and retrievals, often leading to redundancy of parameters. They reframe the "heads" of multi-head attention as "searches", and once the multi-headed/searched values are aggregated, there is an extra retrieval step (using attention) off the searched results. The experiments establish this as an easy drop-in replacement for Multi-head attention.
+
 ![](media/architecture.PNG)
 
 ## Installation
