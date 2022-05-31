@@ -1,5 +1,5 @@
 import tensorflow as tf
-from functools import wrap
+from functools import wraps
 from einops import rearrange
 
 
