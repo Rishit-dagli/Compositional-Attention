@@ -30,6 +30,26 @@ cd compositional-attention
 pip install -e .[dev]
 ```
 
+## Usage
+
+```py
+import tensorflow as tf
+from compositional_attention import CompositionalAttention
+
+attn = CompositionalAttention(
+    dim = 1024,            # input dimension
+    dim_head = 64,         # dimension per attention 'head' - head is now either search or retrieval
+    num_searches = 8,      # number of searches
+    num_retrievals = 2,    # number of retrievals
+    dropout = 0.1,          # dropout of attention of search and retrieval
+)
+
+tokens = tf.random.uniform([1, 512, 1024])  # tokens
+mask = tf.ones([1, 512], dtype=tf.dtypes.bool)  # mask
+
+out = attn(tokens, mask = mask) # (1, 512, 1024)
+```
+
 ## Want to Contribute 🙋‍♂️?
 
 Awesome! If you want to contribute to this project, you're always welcome! See [Contributing Guidelines](CONTRIBUTING.md). You can also take a look at [open issues](https://github.com/Rishit-dagli/Compositional-Attention/issues) for getting more information about current or upcoming tasks.
