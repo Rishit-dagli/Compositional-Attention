@@ -59,7 +59,11 @@ class CompositionalAttention(tf.keras.layers.Layer):
 
         self.causal = causal
 
-    def call(self, inputs, mask=None,):
+    def call(
+        self,
+        inputs,
+        mask=None,
+    ):
         """
         This follows the same einstein notation as the publically availaible PyTorch implementation (https://github.com/lucidrains/compositional-attention-pytorch):
         b - batch
