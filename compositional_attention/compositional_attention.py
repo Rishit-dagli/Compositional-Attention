@@ -25,3 +25,32 @@ class CompositionalAttention(tf.keras.layers.Layer):
         **kwargs
     ):
         super(CompositionalAttention, self).__init__(**kwargs)
+        if prenorm:
+            self.norm = tf.keras.layers.LayerNormalization(axis=-1)
+
+        self.scale = dim_head**-0.5
+        inner_search_dim = dim_head * num_searches
+        inner_retrieval_dim = dim_head * num_retrievals
+
+        self.num_searches = num_searches
+        self.num_retrievals = num_retrievals
+
+        self.to_searches_queries = tf.keras.layers.Dense(
+            inner_search_dim, use_bias=False
+        )
+        self.to_searches_keys = tf.keras.layers.Dense(inner_search_dim, use_bias=False)
+        self.to_retrieval_values = tf.keras.layers.Dense(
+            inner_retrieval_dim, use_bias=False
+        )
+
+        self.to_retrieval_queries = tf.keras.layers.Dense(
+            inner_search_dim, use_bias=False
+        )
+        self.to_retrieval_keys = tf.keras.layers.Dense(dim_head, use_bias=False)
+
+        self.to_out = tf.keras.layers.Dense(dim, use_bias=False)
+
+        self.search_dropout = tf.keras.layers.Dropout(dropout)
+        self.retrieval_dropout = tf.keras.layers.Dropout(dropout)
+
+        self.causal = causal
