@@ -10,7 +10,9 @@ def _many(fn):
 
     return inner
 
+
 rearrange_many = _many(rearrange)
+
 
 class CompositionalAttention(tf.keras.layers.Layer):
     def __init__(
@@ -56,7 +58,7 @@ class CompositionalAttention(tf.keras.layers.Layer):
 
         self.causal = causal
 
-    def call(self, inputs, mask=None, **kwargs):
+    def call(self, inputs, mask=None,):
         """
         This follows the same einstein notation as the publically availaible PyTorch implementation (https://github.com/lucidrains/compositional-attention-pytorch):
         b - batch
