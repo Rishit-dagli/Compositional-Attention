@@ -1,5 +1,6 @@
-import tensorflow as tf
 from functools import wraps
+
+import tensorflow as tf
 from einops import rearrange
 
 
