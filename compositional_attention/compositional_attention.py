@@ -25,7 +25,7 @@ class CompositionalAttention(tf.keras.layers.Layer):
         **kwargs
     ):
         super(CompositionalAttention, self).__init__(**kwargs)
-        prenorm = False
+        self.norm = None
         if prenorm:
             self.norm = tf.keras.layers.LayerNormalization(axis=-1)
 
@@ -55,7 +55,8 @@ class CompositionalAttention(tf.keras.layers.Layer):
         self.retrieval_dropout = tf.keras.layers.Dropout(dropout)
 
         self.causal = causal
-    def call(self, inputs, mask=None):
+
+    def call(self, inputs, mask=None, **kwargs):
         """
         This follows the same einstein notation as the publically availaible PyTorch implementation (https://github.com/lucidrains/compositional-attention-pytorch):
         b - batch
