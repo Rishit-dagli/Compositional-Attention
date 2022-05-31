@@ -25,6 +25,7 @@ class CompositionalAttention(tf.keras.layers.Layer):
         **kwargs
     ):
         super(CompositionalAttention, self).__init__(**kwargs)
+        prenorm = False
         if prenorm:
             self.norm = tf.keras.layers.LayerNormalization(axis=-1)
 
