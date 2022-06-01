@@ -63,7 +63,23 @@ Have any questions, doubts or want to present your opinions, views? You're alway
 ## Citations
 
 ```bibtex
-Mittal, Sarthak, et al. ‘Compositional Attention: Disentangling Search and Retrieval’. ArXiv:2110.09419 [Cs], Feb. 2022. arXiv.org, http://arxiv.org/abs/2110.09419.
+@misc{https://doi.org/10.48550/arxiv.2110.09419,
+  doi = {10.48550/ARXIV.2110.09419},
+  
+  url = {https://arxiv.org/abs/2110.09419},
+  
+  author = {Mittal, Sarthak and Raparthy, Sharath Chandra and Rish, Irina and Bengio, Yoshua and Lajoie, Guillaume},
+  
+  keywords = {Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Compositional Attention: Disentangling Search and Retrieval},
+  
+  publisher = {arXiv},
+  
+  year = {2021},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
 ```
 
 Official [PyTorch implmentation](https://github.com/sarthmit/compositional-attention) and Phil Wang's [PyTorch implmenetation](https://github.com/lucidrains/compositional-attention-pytorch).
